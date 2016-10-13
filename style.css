@@ -39,5 +39,12 @@ body {
 #main-container svg {
   display: block;
   margin: auto;
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
+
+#symbol {
+  fill: #9ff;
+  /*box-shadow: 0 0 5px #000;*/
+  filter: drop-shadow( 0px 0px 2px #9ff );
+  -webkit-filter: drop-shadow( 0px 0px 2px #9ff );
+} 

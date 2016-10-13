@@ -18,17 +18,19 @@
             <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
           </filter>
           <symbol id="symbol" overflow="visible">
-            <rect x="0" y="0" width="6" height="6" style="fill: rgb(0,0,255);
-            fill-opacity:0.8; stroke:rgb(0,0,0); stroke-width:0" />
+            <rect x="-2" y="-2" width="4" height="4" style="
+            fill-opacity:1; stroke:rgb(0,0,0); stroke-width:0" />
           </symbol>
         </defs>
         <!-- <path id="main-path" fill="none" stroke="red" stroke-width="5" d="M70 170 L170 170 L170 70 L70 70 L70 160" filter="url(#filter1)"/> -->
-        <path id="extra-path" fill="none" stroke="green" stroke-width="2" d="M50 150 L150 150 L150 50 L50 50 L50 140"/>
+        <path id="extra-path" fill="none" stroke="#ccc" stroke-width="2" d="M50 60 L50 150 L150 150 L150 50 L50 50 L100 25 L140 43"/>
+        <!-- <path id="heart" fill="none" stroke="red" stroke-width="2" d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" style="transform: scale(5)"/> -->
 
         <!-- <use id="light" x="0" y="0" xlink:href="#symbol"> -->
         <use id="light" xlink:href="#symbol">
-          <animateMotion id="animMotion1" dur="10s"
-            repeatCount="indefinite" rotate="auto-reverse">
+          <animateMotion id="animMotion1" dur="3s"
+            repeatCount="indefinite" rotate="none">
             <mpath xlink:href="#extra-path"/>
           </animateMotion>
           <!-- <animateTransform attributeName="transform" 
