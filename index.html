@@ -10,8 +10,33 @@
   <body>
     <div id='main-container'>
       <h3>Elo Elo test</h3>
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px">
-        <path id="main=-path" fill="none" stroke="#ccc" stroke-width="2" d="M50 150 L150 150 L150 50 L50 50 L50 140"/>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200">
+        <defs>
+          <filter id="filter1" x="0" y="0">
+            <feOffset result="offOut" in="SourceAlpha" dx="-5" dy="-5" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="3" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+          <symbol id="symbol" overflow="visible">
+            <rect x="0" y="0" width="6" height="6" style="fill: rgb(0,0,255);
+            fill-opacity:0.8; stroke:rgb(0,0,0); stroke-width:0" />
+          </symbol>
+        </defs>
+        <!-- <path id="main-path" fill="none" stroke="red" stroke-width="5" d="M70 170 L170 170 L170 70 L70 70 L70 160" filter="url(#filter1)"/> -->
+        <path id="extra-path" fill="none" stroke="green" stroke-width="2" d="M50 150 L150 150 L150 50 L50 50 L50 140"/>
+
+        <!-- <use id="light" x="0" y="0" xlink:href="#symbol"> -->
+        <use id="light" xlink:href="#symbol">
+          <animateMotion id="animMotion1" dur="10s"
+            repeatCount="indefinite" rotate="auto-reverse">
+            <mpath xlink:href="#extra-path"/>
+          </animateMotion>
+          <!-- <animateTransform attributeName="transform" 
+            type="scale" keyTimes="0;0.2;0.8;1" values="1.5;4;4;1.5"
+            dur="10s" additive="replace" fill="freeze"
+            repeatCount="indefinite"/> -->
+        </use>
+
       </svg>
     </div>
     <script src='main.js'></script>
